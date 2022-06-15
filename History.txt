@@ -1,0 +1,49 @@
+
+2022-01-09 Robot_V9.72_NoDelay_Coms_v1.zip - communication without delay()
+2022-01-11 Robot_V9.72_NoDelay_Coms_v2.zip - corrected serial port on TFT
+2022-01-23 Nano_2021-01-23.ino             - averaging of values
+2022-01-29 Robot_V9.72_NoDelay_Coms_v3.zip - NODELAY_BACKWARD, WEBSERVER, WDT (watchdogTimer), Wheel Blocked TFT msg+Fake value test, compass lib timeout
+2022-02-15 Robot_V9.72_NoDelay_Coms_v4.zip - 
+  NodeMCU - MCUBLYNK_NOT_USED - posible run webserver without Blynk account, 
+          - WEBSERVER - more web pages added, possible to control mower, setting not fully working yet
+  Mega    - WEBSERVER - more web pages added, possible to control mower, setting not fully working yet
+  TFT	  - bug with communication fixed, communication between Mega and TFT was working only on Serial3 on TFT
+2022-02-26 Robot_V9.72_NoDelay_Coms_v4_1.zip -
+  NodeMCU - file WebPages.ino instead of WebPages.h - corrected
+  NodeMCU+MEGA - added some configuration over webserver
+2022-04-02 Robot_V9.72_NoDelay_Coms_v4_2.zip - only bug fixes
+  MEGA - Sonar.ino - disabled auto Sonar Off if errors - due to added timeout in pulseIn()
+       - Manouvers.ino - disable WDT in Manouver_Go_To_Charging_Station() because of a lot of delay() used
+  TFT  - Menu_Tests.ino - fixed Wheel test Aerator/Mower
+2022-04-05 Robot_V9.72_NoDelay_Coms_v4_3.zip - only bug fixes   
+  Mega - some serial output correction
+       - less compass readings as loop CT is much faster than origin code
+  library DFRobot_QMC5883 - added timeout message to serial output when reading does not respond (!!! HMC(QMC) Compass library timeout !!!)
+2022-04-18 Robot_V9.72_NoDelay_Coms_v4_4.zip - 
+  Nano - fixed calculation of RawDrillAmp and Raining value
+  TFT  - fixed black screen when Rain detected
+  Mega - added Mow time to Alarms - time change only over code in Activate_Alarms() (Mow_Time(x)) yet
+  TFT+Mega - added timeout to confirmation of communication - sometimes Please wait... message freeze on TFT
+2022-04-28 Robot_V9.72_NoDelay_Coms_v5.zip - 
+  Mega+TFT - sending + setting date - preparation for calendar in alarm
+  Mega - StopBtn - fixed problem with relay spikes which activate StopBtn attachinterrupt without its pressing	
+  Mega - disabled serial messages regarding GPS when GPS not enabled
+  Mega - WheelAmp and Tilt sensor working in backward too (only if run backward due to sonar yet)
+2022-05-01 Robot_V9.72_NoDelay_Coms_v5_1.zip -
+  Mega - Specials_Find_Wire_Track - disable WDT in Specials_Find_Wire_Track() because of a lot of delay() used
+  Mega - added delay timer to runbackward functions
+  Mega - added Fake_wire to UpdateWireSensor() and Check_Wire_In_Out()
+  Mega - increase Wheel_Blocked_Count_Max when run backward in Check_Wheel_Amps()
+2022-05-20 Robot_V9.72_NoDelay_Coms_v6.zip -
+  SerialCom library v1.1 - working with Hardware and Software serial, no need any modification inside (=> removed #define USE_SW_SERIAL)
+  Mega - Wheel_Status_Value for NodeMCU serial output 
+  NodeMCU - telnet - serial output over WiFi with same data as on Mega serial output - no need USB cable for watching Mega values
+                   - library TelnetSpy and Serial. renamed to SerialDebug. 
+  Mega+NodeMCU - increased buffer (40->80) for SerialCom as more values are transfered
+  
+2022-05-30 - Robot_V9.73_NoDelay_Coms_v7.zip -
+  - based on Robot_V9.731
+  - corrected setting and printing of Date and Time
+2022-06-05 - Robot_V9.73_NoDelay_Coms_v7_1.zip 
+  - Mega - fixed reading of date when getting initial values
+  - TFT - fixed wrong screen when click on Quick Go->Just Go
